@@ -1,5 +1,5 @@
 const mongoose = require('mongoose')
-const shortId = require('shortid')
+const shortId = require('shortid')                 // to generate a short ID characterised to use that as a encrypted URl
 
 const shortUrlSchema = new mongoose.Schema({
     full:{
@@ -9,7 +9,7 @@ const shortUrlSchema = new mongoose.Schema({
     short:{
         type: String,
         required: true,
-        default: shortId.generate
+        default: shortId.generate                  // we have to generate a short random characterised URL which is default
     },
     clicks:{
         type: Number,
@@ -18,4 +18,4 @@ const shortUrlSchema = new mongoose.Schema({
     }
 })
 
-module.exports = mongoose.model('ShortUrl',shortUrlSchema)
+module.exports = mongoose.model('ShortUrl',shortUrlSchema)  // exporting the model
